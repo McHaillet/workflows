@@ -53,7 +53,7 @@ jobs:
           echo "2"
           ls
           echo "3"
-          ls torch_test/
+          ls torch-test/
           python -Im coverage combine covreports
           python -Im coverage xml -o coverage.xml
           python -Im coverage report
