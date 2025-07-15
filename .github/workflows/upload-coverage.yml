@@ -46,9 +46,11 @@ jobs:
           path: covreports
           merge-multiple: true
 
+      - name: Display structure of downloaded files
+        run: ls -lah covreports/
+
       - name: Combine coverage data
         run: |
-          ls covreports/
           python -Im coverage combine covreports
           python -Im coverage xml -o coverage.xml
           python -Im coverage report
