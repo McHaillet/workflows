@@ -48,7 +48,7 @@ jobs:
 
       - name: Combine coverage data
         run: |
-          echo $(ls covreports/)
+          ls covreports/
           python -Im coverage combine covreports
           python -Im coverage xml -o coverage.xml
           python -Im coverage report
