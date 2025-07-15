@@ -43,15 +43,11 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           pattern: ${{ inputs.artifact-pattern }}
-          path: covreports
           merge-multiple: true
-
-      - name: Display structure of downloaded files
-        run: ls -lah covreports/
 
       - name: Combine coverage data
         run: |
-          python -Im coverage combine covreports
+          python -Im coverage combine
           python -Im coverage xml -o coverage.xml
           python -Im coverage report
           python -Im coverage report --format=markdown >> $GITHUB_STEP_SUMMARY
