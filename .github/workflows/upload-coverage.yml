@@ -48,12 +48,9 @@ jobs:
 
       - name: Combine coverage data
         run: |
-          echo "1"
-          pwd
-          echo "2"
-          ls
-          echo "3"
-          ls torch-test/
+          echo "$GITHUB_WORKSPACE"
+          ls $GITHUB_WORKSPACE/covreports/
+          ls covreports/
           python -Im coverage combine covreports
           python -Im coverage xml -o coverage.xml
           python -Im coverage report
