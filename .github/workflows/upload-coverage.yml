@@ -48,7 +48,9 @@ jobs:
 
       - name: Combine coverage data
         run: |
+          pwd
           ls covreports/
+          ls /home/runner/work/$REPO_NAME/$REPO_NAME
           python -Im coverage combine covreports
           python -Im coverage xml -o coverage.xml
           python -Im coverage report
