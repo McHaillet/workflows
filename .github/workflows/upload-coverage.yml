@@ -49,10 +49,6 @@ jobs:
       - name: Combine coverage data
         run: |
           ls covreports/
-          python -Im coverage combine covreports
-          python -Im coverage xml -o coverage.xml
-          python -Im coverage report
-          python -Im coverage report --format=markdown >> $GITHUB_STEP_SUMMARY
 
       - name: Upload to codecov
         uses: codecov/codecov-action@v5
