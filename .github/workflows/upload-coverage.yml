@@ -48,8 +48,6 @@ jobs:
 
       - name: Combine coverage data
         run: |
-          echo "$GITHUB_WORKSPACE"
-          ls $GITHUB_WORKSPACE/covreports/
           ls covreports/
           python -Im coverage combine covreports
           python -Im coverage xml -o coverage.xml
